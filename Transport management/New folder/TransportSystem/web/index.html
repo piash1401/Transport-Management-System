@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bangladesh Transport System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Bangladesh Transport System</h1>
+        <p>Book your journey across Bangladesh</p>
+      </div>
+    </header>
+
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#routes">Routes</a></li>
+          <li><a href="#booking">Book Ticket</a></li>
+          <li><a href="#my-bookings">My Bookings</a></li>
+          <li><a href="#login">Login</a></li>
+          <li><a href="#register">Register</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <section id="home" class="section active">
+        <div class="container">
+          <h2>Welcome to Bangladesh Transport System</h2>
+          <div class="hero">
+            <img
+              src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+              alt="Bangladesh Transport"
+            />
+            <div class="hero-text">
+              <h3>Travel Across Bangladesh</h3>
+              <p>
+                Book tickets for buses to travel between
+                major cities in Bangladesh.
+              </p>
+              <button class="btn" onclick="showSection('routes')">
+                View Routes
+              </button>
+            </div>
+          </div>
+
+          <div class="features">
+            <div class="feature-card">
+              <h3>Major Routes</h3>
+              <p>
+                Travel between Dhaka, Chittagong, Sylhet, Rajshahi, Khulna, and
+                more.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>Comfortable Bus Service</h3>
+              <p>
+                Choose from AC and Non-AC buses based on your preference.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>Easy Booking</h3>
+              <p>Simple booking process with instant confirmation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="routes" class="section">
+        <div class="container">
+          <h2>Popular Routes in Bangladesh</h2>
+
+          <div class="search-box">
+            <h3>Search Routes</h3>
+            <div class="search-form">
+              <div class="form-group">
+                <label for="source">From:</label>
+                <select id="source">
+                  <option value="">Select Source</option>
+                  <option value="Dhaka">Dhaka</option>
+                  <option value="Chittagong">Chittagong</option>
+                  <option value="Sylhet">Sylhet</option>
+                  <option value="Rajshahi">Rajshahi</option>
+                  <option value="Khulna">Khulna</option>
+                  <option value="Barisal">Barisal</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="destination">To:</label>
+                <select id="destination">
+                  <option value="">Select Destination</option>
+                  <option value="Dhaka">Dhaka</option>
+                  <option value="Chittagong">Chittagong</option>
+                  <option value="Sylhet">Sylhet</option>
+                  <option value="Rajshahi">Rajshahi</option>
+                  <option value="Khulna">Khulna</option>
+                  <option value="Barisal">Barisal</option>
+                </select>
+              </div>
+              <button class="btn" onclick="searchRoutes()">Search</button>
+            </div>
+          </div>
+
+          <h3>Major Routes from Dhaka</h3>
+          <div class="route-cards">
+            <div class="route-card">
+              <h4>Dhaka to Chittagong</h4>
+              <p>Distance: 250 km</p>
+              <p>Stops: Comilla, Feni</p>
+              <div class="transport-options">
+                <span class="transport-tag">Bus</span>
+              </div>
+              <button
+                class="btn"
+                onclick="showBookingForm('Dhaka', 'Chittagong')"
+              >
+                Book Now
+              </button>
+            </div>
+            <div class="route-card">
+              <h4>Dhaka to Sylhet</h4>
+              <p>Distance: 240 km</p>
+              <p>Stops: Narsingdi, Bhairab, Moulvibazar</p>
+              <div class="transport-options">
+                <span class="transport-tag">Bus</span>
+              </div>
+              <button class="btn" onclick="showBookingForm('Dhaka', 'Sylhet')">
+                Book Now
+              </button>
+            </div>
+            <div class="route-card">
+              <h4>Dhaka to Rajshahi</h4>
+              <p>Distance: 260 km</p>
+              <p>Stops: Tangail, Sirajganj, Natore</p>
+              <div class="transport-options">
+                <span class="transport-tag">Bus</span>
+              </div>
+              <button
+                class="btn"
+                onclick="showBookingForm('Dhaka', 'Rajshahi')"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+
+          <h3>Tourist Routes</h3>
+          <div class="route-cards">
+            <div class="route-card">
+              <h4>Chittagong to Cox's Bazar</h4>
+              <p>Distance: 150 km</p>
+              <div class="transport-options">
+                <span class="transport-tag">Bus</span>
+              </div>
+              <button
+                class="btn"
+                onclick="showBookingForm('Chittagong', 'Cox\'s Bazar')"
+              >
+                Book Now
+              </button>
+            </div>
+            <div class="route-card">
+              <h4>Chittagong to Bandarban</h4>
+              <p>Distance: 90 km</p>
+              <div class="transport-options">
+                <span class="transport-tag">Bus</span>
+              </div>
+              <button
+                class="btn"
+                onclick="showBookingForm('Chittagong', 'Bandarban')"
+              >
+                Book Now
+              </button>
+            </div>
+            <div class="route-card">
+              <h4>Sylhet to Sunamganj</h4>
+              <p>Distance: 70 km</p>
+              <div class="transport-options">
+                <span class="transport-tag">Bus</span>
+              </div>
+              <button
+                class="btn"
+                onclick="showBookingForm('Sylhet', 'Sunamganj')"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="booking" class="section">
+        <div class="container">
+          <h2>Book Your Ticket</h2>
+          <div class="booking-form">
+            <div class="form-group">
+              <label for="booking-source">From:</label>
+              <select id="booking-source">
+                <option value="">Select Source</option>
+                <option value="Dhaka">Dhaka</option>
+                <option value="Chittagong">Chittagong</option>
+                <option value="Sylhet">Sylhet</option>
+                <option value="Rajshahi">Rajshahi</option>
+                <option value="Khulna">Khulna</option>
+                <option value="Barisal">Barisal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="booking-destination">To:</label>
+              <select id="booking-destination">
+                <option value="">Select Destination</option>
+                <option value="Dhaka">Dhaka</option>
+                <option value="Chittagong">Chittagong</option>
+                <option value="Sylhet">Sylhet</option>
+                <option value="Rajshahi">Rajshahi</option>
+                <option value="Khulna">Khulna</option>
+                <option value="Barisal">Barisal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="transport-type">Transport Type:</label>
+              <select id="transport-type">
+                <option value="">Select Transport</option>
+                <option value="bus">Bus</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="journey-date">Journey Date:</label>
+              <input type="date" id="journey-date" />
+            </div>
+            <div class="form-group">
+              <label for="seats">Number of Seats:</label>
+              <input type="number" id="seats" min="1" max="10" value="1" />
+            </div>
+            <button class="btn" onclick="bookTicket()">Book Ticket</button>
+          </div>
